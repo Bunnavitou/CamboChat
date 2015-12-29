@@ -27,7 +27,6 @@ class GroupViewController: YomanViewController,UITableViewDataSource,UITableView
         SendTrat("CAMCHAT_LSTFRND")
     }
     
-    
     // MARK: - Navigator Bar
     func NavigatorSetUp() {
         let buttonClose: UIButton = UIButton(type: .Custom)
