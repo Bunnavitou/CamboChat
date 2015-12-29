@@ -17,7 +17,7 @@ class QRCodeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let data = "yoman".dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
+        let data = "testing man".dataUsingEncoding(NSISOLatin1StringEncoding, allowLossyConversion: false)
         
         let filter = CIFilter(name: "CIQRCodeGenerator")
         
@@ -33,7 +33,6 @@ class QRCodeViewController: UIViewController {
         
         imgQRCode.image = UIImage(CIImage: transformedImage)
     }
-
     @IBAction func BackAction(sender: UIButton) {
         self.dismissViewControllerAnimated(true, completion: nil)
         
