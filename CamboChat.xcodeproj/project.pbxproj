@@ -78,6 +78,9 @@
 		398AC1F31C02A67700C0BD31 /* person_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 398AC1F21C02A67700C0BD31 /* person_icon.png */; };
 		398AC1F51C02E45300C0BD31 /* acceptFrined.png in Resources */ = {isa = PBXBuildFile; fileRef = 398AC1F41C02E45300C0BD31 /* acceptFrined.png */; };
 		398AC1F71C02E69400C0BD31 /* AcceptNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 398AC1F61C02E69400C0BD31 /* AcceptNewFriendViewController.swift */; };
+		3994344A1C3365600028BE24 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399434471C3365600028BE24 /* Bolts.framework */; };
+		3994344B1C3365600028BE24 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399434481C3365600028BE24 /* FBSDKCoreKit.framework */; };
+		3994344C1C3365600028BE24 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399434491C3365600028BE24 /* FBSDKLoginKit.framework */; };
 		39AA1E5D1BE89A5100E8F647 /* Forward Message.png in Resources */ = {isa = PBXBuildFile; fileRef = 39AA1E5C1BE89A5100E8F647 /* Forward Message.png */; };
 		39AA1E5F1BE89B2900E8F647 /* AddNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA1E5E1BE89B2900E8F647 /* AddNewFriendViewController.swift */; };
 		39C252571BE2185C003FE94F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C252561BE2185C003FE94F /* MainTabBarController.swift */; };
@@ -219,6 +222,9 @@
 		398AC1F21C02A67700C0BD31 /* person_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_icon.png; sourceTree = "<group>"; };
 		398AC1F41C02E45300C0BD31 /* acceptFrined.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acceptFrined.png; sourceTree = "<group>"; };
 		398AC1F61C02E69400C0BD31 /* AcceptNewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptNewFriendViewController.swift; sourceTree = "<group>"; };
+		399434471C3365600028BE24 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		399434481C3365600028BE24 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		399434491C3365600028BE24 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
 		39AA1E5C1BE89A5100E8F647 /* Forward Message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Forward Message.png"; sourceTree = "<group>"; };
 		39AA1E5E1BE89B2900E8F647 /* AddNewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewController.swift; sourceTree = "<group>"; };
 		39C252561BE2185C003FE94F /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -241,8 +247,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3994344A1C3365600028BE24 /* Bolts.framework in Frameworks */,
+				3994344B1C3365600028BE24 /* FBSDKCoreKit.framework in Frameworks */,
 				39DFA9C21BCF7D7D008A4860 /* Foundation.framework in Frameworks */,
 				39DFA9C01BCF7D75008A4860 /* CoreGraphics.framework in Frameworks */,
+				3994344C1C3365600028BE24 /* FBSDKLoginKit.framework in Frameworks */,
 				39DFA9BE1BCF7D6A008A4860 /* UIKit.framework in Frameworks */,
 				39DFA9BC1BCF7D65008A4860 /* QuartzCore.framework in Frameworks */,
 			);
@@ -467,6 +476,7 @@
 		3974B9F91C327C0E00D3BA1D /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				399434461C3365600028BE24 /* FB_Framework */,
 				39DFA9C11BCF7D7D008A4860 /* Foundation.framework */,
 				39DFA9BF1BCF7D75008A4860 /* CoreGraphics.framework */,
 				39DFA9BD1BCF7D6A008A4860 /* UIKit.framework */,
@@ -513,6 +523,17 @@
 				398AC1E11C02A40B00C0BD31 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		399434461C3365600028BE24 /* FB_Framework */ = {
+			isa = PBXGroup;
+			children = (
+				399434471C3365600028BE24 /* Bolts.framework */,
+				399434481C3365600028BE24 /* FBSDKCoreKit.framework */,
+				399434491C3365600028BE24 /* FBSDKLoginKit.framework */,
+			);
+			name = FB_Framework;
+			path = CamboChat/FB_Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -779,6 +800,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CamboChat/FB_Framework",
+				);
 				INFOPLIST_FILE = CamboChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -794,6 +819,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CamboChat/FB_Framework",
+				);
 				INFOPLIST_FILE = CamboChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

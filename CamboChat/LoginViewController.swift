@@ -9,9 +9,11 @@
 import UIKit
 
 
-class LoginViewController: YomanViewController,UITableViewDataSource,UITableViewDelegate {
+class LoginViewController: YomanViewController,UITableViewDataSource,UITableViewDelegate,FBSDKLoginButtonDelegate {
     
     @IBOutlet var btnSignup: UIButton!
+    
+    @IBOutlet var viewFB: UIView!
     
     var yoLayer: CALayer {
         return btnSignup.layer
@@ -25,9 +27,59 @@ class LoginViewController: YomanViewController,UITableViewDataSource,UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpLayer()
-        self.performSegueWithIdentifier("GOGO", sender: nil)
-    
+//        self.performSegueWithIdentifier("GOGO", sender: nil)
+        if (FBSDKAccessToken.currentAccessToken() != nil){
+            FBSDKLoginManager().logOut()
+            FBSDKAccessToken.setCurrentAccessToken(nil)
+        }else{
+      
+        }
+        let loginView : FBSDKLoginButton = FBSDKLoginButton()
+        loginView.frame  = CGRectMake(UIScreen.mainScreen().bounds.size.width/2 - 100, 0, 200, 30)
+        loginView.readPermissions = ["public_profile", "email", "user_friends"]
+        loginView.delegate = self
+        viewFB.addSubview(loginView)
     }
+    
+    // Facebook Delegate Methods
+    func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
+        if ((error) != nil){
+            // Process error
+        }else if result.isCancelled {
+            // Handle cancellations
+        }else {
+            // If you ask for multiple permissions at once, you
+            // should check if specific permissions missing
+            if result.grantedPermissions.contains("email"){
+                // Do work
+            }
+            
+            let testPara = NSMutableDictionary()
+            testPara.setObject("name,gender,first_name,last_name,email", forKey: "fields")
+            
+            //=====gender,first_name,last_name,id,age_range,devices,cover,email,locale
+            
+            let graphRequest : FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: testPara as [NSObject : AnyObject])
+            
+            graphRequest.startWithCompletionHandler({ (connection, result, error) -> Void in
+                
+                if ((error) != nil){
+                    // Process error
+                    print("Error: \(error)")
+                }else{
+                    print("fetched user: \(result)")
+                    let userP : NSString = result.valueForKey("id") as! NSString
+                    
+                    print("https://graph.facebook.com/\(userP)/picture?type=large")
+                    
+                }
+            })
+        }
+    }
+    func loginButtonDidLogOut(loginButton: FBSDKLoginButton!) {
+        print("User Logged Out")
+    }
+    
     
     // MARK: - UITableView Method Area
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int           {
@@ -52,7 +104,7 @@ class LoginViewController: YomanViewController,UITableViewDataSource,UITableView
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
  
     }
-     // MARK: - UITableView Method Area
+     // MARK: - Button Method Area
     func btnLoginAction(sender: UIButton)      {
         SendTrat("CAMCHAT_LOGIN")
 

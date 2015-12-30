@@ -1823,22 +1823,46 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="222" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8Gv-Y7-Vmr">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Gj8-em-6gj">
-                                    <rect key="frame" x="0.0" y="286" width="600" height="35"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="pwS-Bq-k8q">
+                                    <rect key="frame" x="0.0" y="286" width="600" height="150"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.71372549019999998" green="0.3803921569" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <state key="normal" title="Forget Password">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <state key="highlighted">
-                                        <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </state>
-                                    <connections>
-                                        <action selector="btnForgotPasswordAction:" destination="7QE-wq-fES" eventType="touchUpInside" id="pEx-mw-GdH"/>
-                                    </connections>
-                                </button>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gj8-em-6gj">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="35"/>
+                                            <color key="backgroundColor" red="0.71372549019999998" green="0.3803921569" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="35" id="ncF-tp-OjD"/>
+                                            </constraints>
+                                            <state key="normal" title="Forget Password">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <state key="highlighted">
+                                                <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="btnForgotPasswordAction:" destination="7QE-wq-fES" eventType="touchUpInside" id="pEx-mw-GdH"/>
+                                            </connections>
+                                        </button>
+                                        <view tag="123" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIT-9F-PjI">
+                                            <rect key="frame" x="0.0" y="110" width="600" height="40"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="40" id="Xqm-Bq-ne6"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="iIT-9F-PjI" secondAttribute="bottom" id="8Cx-ph-mjQ"/>
+                                        <constraint firstItem="Gj8-em-6gj" firstAttribute="leading" secondItem="pwS-Bq-k8q" secondAttribute="leading" id="gUg-so-alb"/>
+                                        <constraint firstItem="iIT-9F-PjI" firstAttribute="leading" secondItem="pwS-Bq-k8q" secondAttribute="leading" id="iTh-19-ZBP"/>
+                                        <constraint firstItem="Gj8-em-6gj" firstAttribute="top" secondItem="pwS-Bq-k8q" secondAttribute="top" id="kKF-lE-MSp"/>
+                                        <constraint firstAttribute="trailing" secondItem="iIT-9F-PjI" secondAttribute="trailing" id="szt-uq-QhO"/>
+                                        <constraint firstAttribute="trailing" secondItem="Gj8-em-6gj" secondAttribute="trailing" id="xHh-es-oBr"/>
+                                    </constraints>
+                                </view>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="loginViewCell" rowHeight="200" id="Fmc-2v-c0m" customClass="loginTableCell" customModule="CamboChat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="86" width="600" height="200"/>
@@ -1996,6 +2020,7 @@
                     <navigationItem key="navigationItem" title="TT" id="GnU-6A-q5e"/>
                     <connections>
                         <outlet property="btnSignup" destination="P0M-lL-6Aa" id="5oG-XT-uoN"/>
+                        <outlet property="viewFB" destination="iIT-9F-PjI" id="uO5-tb-bKx"/>
                         <segue destination="kAy-4d-FAR" kind="show" identifier="GOGO" id="Z8a-HX-lwx"/>
                         <segue destination="Jdu-wn-8fp" kind="modal" identifier="SignUpSegue" id="5WW-Nu-HWG"/>
                         <segue destination="hLI-2t-Kef" kind="modal" identifier="forgetPasswordSegue" id="5aE-IU-KFC"/>
@@ -2492,6 +2517,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="szq-e4-A8q"/>
-        <segue reference="QkX-LL-L7s"/>
+        <segue reference="5WW-Nu-HWG"/>
     </inferredMetricsTieBreakers>
 </document>
