@@ -159,22 +159,18 @@ class AddNewFriendViewController: YomanViewController,UITableViewDataSource,UITa
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)                  {
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
-        
-        if #available(iOS 8.0, *) {
+
+        let alert = UIAlertController(title: "Pending", message: "Do you add Yoman as friend", preferredStyle: UIAlertControllerStyle.Alert)
+        alert.addAction(UIAlertAction(title: "YES", style: .Default, handler: { action in
+            print("Ok")
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { action in
             
-            let alert = UIAlertController(title: "Pending", message: "Do you add Yoman as friend", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "YES", style: .Default, handler: { action in
-                print("Ok")
-            }))
-            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: { action in
-                
-                print("Cancel")
-                
-            }))
-            self.presentViewController(alert, animated: true, completion: nil)
-        } else {
+            print("Cancel")
             
-        }
+        }))
+        self.presentViewController(alert, animated: true, completion: nil)
+       
 
     }
     

@@ -16,6 +16,7 @@ class LoginViewController: YomanViewController,UITableViewDataSource,UITableView
     @IBOutlet var viewFB: UIView!
     @IBOutlet var viewGoolge: UIView!
     
+
     var yoLayer: CALayer {
         return btnSignup.layer
     }
@@ -36,7 +37,7 @@ class LoginViewController: YomanViewController,UITableViewDataSource,UITableView
             FBSDKAccessToken.setCurrentAccessToken(nil)
         }
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
-        loginView.frame  = CGRectMake(UIScreen.mainScreen().bounds.size.width/2 - 100, 0, 200, 40)
+        loginView.frame  = CGRectMake(UIScreen.mainScreen().bounds.size.width/2 - (viewGoolge.bounds.width / 1.9 + 2) / 2, 0, viewGoolge.bounds.width / 1.9 + 2, 40)
         loginView.readPermissions = ["public_profile", "email", "user_friends"]
         loginView.delegate = self
         viewFB.addSubview(loginView)

@@ -45,8 +45,9 @@ class AddNewChatViewController: YomanViewController,UITableViewDataSource,UITabl
         mainScrollHeigthConstraint.constant = 0
         mainScrollVIew.showsHorizontalScrollIndicator = false
         
-        SendTrat("CAMCHAT_LSTFRNDCRM")
+//        SendTrat("CAMCHAT_LSTFRNDCRM")
         
+        dicData = SingleTonManager.ShareSingleTonManager().dicUserFriend
     }
     
     // MARK: - Server Action Area
@@ -69,9 +70,7 @@ class AddNewChatViewController: YomanViewController,UITableViewDataSource,UITabl
             }
             if(responseDictionary["KEY_API"] as! String == "CAMCHAT_LSTFRNDCRM"){
                 
-                dicData = responseDictionary
-                print(dicData)
-                mainTableView.reloadData()
+              
             }else {
                 
             }

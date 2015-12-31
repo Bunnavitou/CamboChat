@@ -17,7 +17,7 @@
 @property (nonatomic) NSString* user_lname;
 @property (nonatomic) NSString* user_fname;
 
-
+@property (nonatomic) NSDictionary *dicUserFriend;
 
 
 + (SingleTonManager *)ShareSingleTonManager;

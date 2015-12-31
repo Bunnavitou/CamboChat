@@ -84,6 +84,7 @@ class GroupViewController: YomanViewController,UITableViewDataSource,UITableView
             if(responseDictionary["KEY_API"] as! String == "CAMCHAT_LSTFRND"){
                 
                 dicData = responseDictionary
+                SingleTonManager.ShareSingleTonManager().dicUserFriend = dicData as [NSObject : AnyObject]
                 print(dicData)
                 mainTableView.reloadData()
             }else {
