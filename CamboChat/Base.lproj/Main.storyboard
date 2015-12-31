@@ -1216,8 +1216,8 @@
                                     <outlet property="delegate" destination="dQM-xK-IBz" id="EmQ-xp-Irm"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LN7-Pd-x8x">
-                                <rect key="frame" x="0.0" y="178" width="600" height="422"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="LN7-Pd-x8x">
+                                <rect key="frame" x="0.0" y="178" width="600" height="373"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="addNewChatCell" rowHeight="50" id="i0D-AJ-lOn" customClass="AddNewChatCellView" customModule="CamboChat" customModuleProvider="target">
@@ -1290,8 +1290,8 @@
                                     <constraint firstAttribute="height" constant="70" id="xCU-8a-9V2"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7H-0s-VJX" userLabel="btnCreate">
-                                <rect key="frame" x="240" y="600" width="120" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A7H-0s-VJX" userLabel="btnCreate">
+                                <rect key="frame" x="240" y="551" width="120" height="30"/>
                                 <color key="backgroundColor" red="0.71372549019999998" green="0.3803921569" blue="0.46666666670000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="MQR-DR-4X2"/>
@@ -1808,7 +1808,7 @@
             </objects>
             <point key="canvasLocation" x="-2246" y="-215"/>
         </scene>
-        <!--TT-->
+        <!--Delegate-->
         <scene sceneID="tju-SJ-IJH">
             <objects>
                 <viewController id="7QE-wq-fES" customClass="LoginViewController" customModule="CamboChat" customModuleProvider="target" sceneMemberID="viewController">
@@ -1848,18 +1848,29 @@
                                         <view tag="123" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIT-9F-PjI">
                                             <rect key="frame" x="0.0" y="110" width="600" height="40"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hil-jS-kXL" customClass="GIDSignInButton">
+                                            <rect key="frame" x="55" y="72" width="490" height="30"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="40" id="Xqm-Bq-ne6"/>
+                                                <constraint firstAttribute="height" constant="30" id="MUP-ce-Qip"/>
                                             </constraints>
+                                            <connections>
+                                                <outlet property="delegate" destination="7QE-wq-fES" id="Ine-H2-Ebf"/>
+                                            </connections>
                                         </view>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="iIT-9F-PjI" secondAttribute="bottom" id="8Cx-ph-mjQ"/>
+                                        <constraint firstItem="Hil-jS-kXL" firstAttribute="leading" secondItem="pwS-Bq-k8q" secondAttribute="leading" constant="55" id="B7p-l2-mAX"/>
+                                        <constraint firstItem="iIT-9F-PjI" firstAttribute="trailing" secondItem="Gj8-em-6gj" secondAttribute="trailing" id="BA8-fA-c2S"/>
+                                        <constraint firstItem="iIT-9F-PjI" firstAttribute="top" secondItem="Hil-jS-kXL" secondAttribute="bottom" constant="8" id="Mo0-T5-dVr"/>
+                                        <constraint firstItem="iIT-9F-PjI" firstAttribute="top" secondItem="pwS-Bq-k8q" secondAttribute="top" constant="110" id="Qd0-nz-wbk"/>
+                                        <constraint firstAttribute="bottom" secondItem="iIT-9F-PjI" secondAttribute="bottom" id="Rkh-Ke-n49"/>
+                                        <constraint firstAttribute="trailing" secondItem="Hil-jS-kXL" secondAttribute="trailing" constant="55" id="Xuq-am-H2f"/>
                                         <constraint firstItem="Gj8-em-6gj" firstAttribute="leading" secondItem="pwS-Bq-k8q" secondAttribute="leading" id="gUg-so-alb"/>
-                                        <constraint firstItem="iIT-9F-PjI" firstAttribute="leading" secondItem="pwS-Bq-k8q" secondAttribute="leading" id="iTh-19-ZBP"/>
+                                        <constraint firstItem="iIT-9F-PjI" firstAttribute="leading" secondItem="Gj8-em-6gj" secondAttribute="leading" id="jg5-Ro-uGM"/>
                                         <constraint firstItem="Gj8-em-6gj" firstAttribute="top" secondItem="pwS-Bq-k8q" secondAttribute="top" id="kKF-lE-MSp"/>
-                                        <constraint firstAttribute="trailing" secondItem="iIT-9F-PjI" secondAttribute="trailing" id="szt-uq-QhO"/>
                                         <constraint firstAttribute="trailing" secondItem="Gj8-em-6gj" secondAttribute="trailing" id="xHh-es-oBr"/>
                                     </constraints>
                                 </view>
@@ -2021,6 +2032,7 @@
                     <connections>
                         <outlet property="btnSignup" destination="P0M-lL-6Aa" id="5oG-XT-uoN"/>
                         <outlet property="viewFB" destination="iIT-9F-PjI" id="uO5-tb-bKx"/>
+                        <outlet property="viewGoolge" destination="Hil-jS-kXL" id="cwk-wE-cp5"/>
                         <segue destination="kAy-4d-FAR" kind="show" identifier="GOGO" id="Z8a-HX-lwx"/>
                         <segue destination="Jdu-wn-8fp" kind="modal" identifier="SignUpSegue" id="5WW-Nu-HWG"/>
                         <segue destination="hLI-2t-Kef" kind="modal" identifier="forgetPasswordSegue" id="5aE-IU-KFC"/>

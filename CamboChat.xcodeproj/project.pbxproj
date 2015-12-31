@@ -81,6 +81,13 @@
 		3994344A1C3365600028BE24 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399434471C3365600028BE24 /* Bolts.framework */; };
 		3994344B1C3365600028BE24 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399434481C3365600028BE24 /* FBSDKCoreKit.framework */; };
 		3994344C1C3365600028BE24 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399434491C3365600028BE24 /* FBSDKLoginKit.framework */; };
+		3994344F1C33CE3D0028BE24 /* GoogleSignIn.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3994344D1C33CE3D0028BE24 /* GoogleSignIn.bundle */; };
+		399434501C33CE3D0028BE24 /* GoogleSignIn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3994344E1C33CE3D0028BE24 /* GoogleSignIn.framework */; };
+		399434521C33CF310028BE24 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399434511C33CF310028BE24 /* AddressBook.framework */; };
+		399434541C33CF3A0028BE24 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399434531C33CF3A0028BE24 /* SafariServices.framework */; };
+		399434561C33CF400028BE24 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399434551C33CF400028BE24 /* StoreKit.framework */; };
+		399434581C33CF4F0028BE24 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 399434571C33CF4F0028BE24 /* SystemConfiguration.framework */; };
+		3994345A1C33CF660028BE24 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 399434591C33CF660028BE24 /* libz.tbd */; };
 		39AA1E5D1BE89A5100E8F647 /* Forward Message.png in Resources */ = {isa = PBXBuildFile; fileRef = 39AA1E5C1BE89A5100E8F647 /* Forward Message.png */; };
 		39AA1E5F1BE89B2900E8F647 /* AddNewFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39AA1E5E1BE89B2900E8F647 /* AddNewFriendViewController.swift */; };
 		39C252571BE2185C003FE94F /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39C252561BE2185C003FE94F /* MainTabBarController.swift */; };
@@ -222,9 +229,16 @@
 		398AC1F21C02A67700C0BD31 /* person_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = person_icon.png; sourceTree = "<group>"; };
 		398AC1F41C02E45300C0BD31 /* acceptFrined.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = acceptFrined.png; sourceTree = "<group>"; };
 		398AC1F61C02E69400C0BD31 /* AcceptNewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcceptNewFriendViewController.swift; sourceTree = "<group>"; };
-		399434471C3365600028BE24 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		399434481C3365600028BE24 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		399434491C3365600028BE24 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		399434471C3365600028BE24 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = CamboChat/FB_Framework/Bolts.framework; sourceTree = "<group>"; };
+		399434481C3365600028BE24 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKCoreKit.framework; path = CamboChat/FB_Framework/FBSDKCoreKit.framework; sourceTree = "<group>"; };
+		399434491C3365600028BE24 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FBSDKLoginKit.framework; path = CamboChat/FB_Framework/FBSDKLoginKit.framework; sourceTree = "<group>"; };
+		3994344D1C33CE3D0028BE24 /* GoogleSignIn.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleSignIn.bundle; path = CamboChat/Goolge_Framework/GoogleSignIn.bundle; sourceTree = "<group>"; };
+		3994344E1C33CE3D0028BE24 /* GoogleSignIn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSignIn.framework; path = CamboChat/Goolge_Framework/GoogleSignIn.framework; sourceTree = "<group>"; };
+		399434511C33CF310028BE24 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		399434531C33CF3A0028BE24 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		399434551C33CF400028BE24 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		399434571C33CF4F0028BE24 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		399434591C33CF660028BE24 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		39AA1E5C1BE89A5100E8F647 /* Forward Message.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Forward Message.png"; sourceTree = "<group>"; };
 		39AA1E5E1BE89B2900E8F647 /* AddNewFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddNewFriendViewController.swift; sourceTree = "<group>"; };
 		39C252561BE2185C003FE94F /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
@@ -247,6 +261,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3994345A1C33CF660028BE24 /* libz.tbd in Frameworks */,
+				399434581C33CF4F0028BE24 /* SystemConfiguration.framework in Frameworks */,
+				399434561C33CF400028BE24 /* StoreKit.framework in Frameworks */,
+				399434541C33CF3A0028BE24 /* SafariServices.framework in Frameworks */,
+				399434521C33CF310028BE24 /* AddressBook.framework in Frameworks */,
+				399434501C33CE3D0028BE24 /* GoogleSignIn.framework in Frameworks */,
 				3994344A1C3365600028BE24 /* Bolts.framework in Frameworks */,
 				3994344B1C3365600028BE24 /* FBSDKCoreKit.framework in Frameworks */,
 				39DFA9C21BCF7D7D008A4860 /* Foundation.framework in Frameworks */,
@@ -394,7 +414,7 @@
 		396DDE1D1BBE06E300A4BE0D = {
 			isa = PBXGroup;
 			children = (
-				3974B9F91C327C0E00D3BA1D /* framework */,
+				3974B9F91C327C0E00D3BA1D /* Framework */,
 				396DDE281BBE06E300A4BE0D /* CamboChat */,
 				396DDE271BBE06E300A4BE0D /* Products */,
 			);
@@ -473,16 +493,25 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
-		3974B9F91C327C0E00D3BA1D /* framework */ = {
+		3974B9F91C327C0E00D3BA1D /* Framework */ = {
 			isa = PBXGroup;
 			children = (
-				399434461C3365600028BE24 /* FB_Framework */,
+				399434591C33CF660028BE24 /* libz.tbd */,
+				399434571C33CF4F0028BE24 /* SystemConfiguration.framework */,
+				399434551C33CF400028BE24 /* StoreKit.framework */,
+				399434531C33CF3A0028BE24 /* SafariServices.framework */,
+				399434511C33CF310028BE24 /* AddressBook.framework */,
+				3994344D1C33CE3D0028BE24 /* GoogleSignIn.bundle */,
+				3994344E1C33CE3D0028BE24 /* GoogleSignIn.framework */,
+				399434471C3365600028BE24 /* Bolts.framework */,
+				399434481C3365600028BE24 /* FBSDKCoreKit.framework */,
+				399434491C3365600028BE24 /* FBSDKLoginKit.framework */,
 				39DFA9C11BCF7D7D008A4860 /* Foundation.framework */,
 				39DFA9BF1BCF7D75008A4860 /* CoreGraphics.framework */,
 				39DFA9BD1BCF7D6A008A4860 /* UIKit.framework */,
 				39DFA9BB1BCF7D65008A4860 /* QuartzCore.framework */,
 			);
-			name = framework;
+			name = Framework;
 			sourceTree = "<group>";
 		};
 		398AC1C01C02A40B00C0BD31 /* SDWebImage */ = {
@@ -523,17 +552,6 @@
 				398AC1E11C02A40B00C0BD31 /* UIView+WebCacheOperation.m */,
 			);
 			path = SDWebImage;
-			sourceTree = "<group>";
-		};
-		399434461C3365600028BE24 /* FB_Framework */ = {
-			isa = PBXGroup;
-			children = (
-				399434471C3365600028BE24 /* Bolts.framework */,
-				399434481C3365600028BE24 /* FBSDKCoreKit.framework */,
-				399434491C3365600028BE24 /* FBSDKLoginKit.framework */,
-			);
-			name = FB_Framework;
-			path = CamboChat/FB_Framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -596,6 +614,7 @@
 			files = (
 				3974B9F31C326EC300D3BA1D /* Scan.png in Resources */,
 				396DDE5F1BBE0A1E00A4BE0D /* More_1.png in Resources */,
+				3994344F1C33CE3D0028BE24 /* GoogleSignIn.bundle in Resources */,
 				39EB409C1BCB711C00E2D3B5 /* Previous.png in Resources */,
 				398AC1F51C02E45300C0BD31 /* acceptFrined.png in Resources */,
 				396DDE341BBE06E300A4BE0D /* Main.storyboard in Resources */,
@@ -803,10 +822,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CamboChat/FB_Framework",
+					"$(PROJECT_DIR)/CamboChat/Goolge_Framework",
 				);
 				INFOPLIST_FILE = CamboChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CamboChat/CamboChat-Bridging-Header.h";
@@ -822,10 +843,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CamboChat/FB_Framework",
+					"$(PROJECT_DIR)/CamboChat/Goolge_Framework",
 				);
 				INFOPLIST_FILE = CamboChat/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.yoman.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "CamboChat/CamboChat-Bridging-Header.h";

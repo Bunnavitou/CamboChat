@@ -4,6 +4,8 @@
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 
+#import <GoogleSignIn/GoogleSignIn.h>
+
 #import "SWRevealViewController.h"
 #import "SWTableViewCell.h"
 

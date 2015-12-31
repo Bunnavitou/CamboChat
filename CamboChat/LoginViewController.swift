@@ -9,11 +9,12 @@
 import UIKit
 
 
-class LoginViewController: YomanViewController,UITableViewDataSource,UITableViewDelegate,FBSDKLoginButtonDelegate {
+class LoginViewController: YomanViewController,UITableViewDataSource,UITableViewDelegate,FBSDKLoginButtonDelegate,GIDSignInDelegate, GIDSignInUIDelegate {
     
     @IBOutlet var btnSignup: UIButton!
     
     @IBOutlet var viewFB: UIView!
+    @IBOutlet var viewGoolge: UIView!
     
     var yoLayer: CALayer {
         return btnSignup.layer
@@ -26,22 +27,45 @@ class LoginViewController: YomanViewController,UITableViewDataSource,UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         setUpLayer()
-//        self.performSegueWithIdentifier("GOGO", sender: nil)
+        
+        //=========FaceBook access info
         if (FBSDKAccessToken.currentAccessToken() != nil){
             FBSDKLoginManager().logOut()
             FBSDKAccessToken.setCurrentAccessToken(nil)
-        }else{
-      
         }
         let loginView : FBSDKLoginButton = FBSDKLoginButton()
-        loginView.frame  = CGRectMake(UIScreen.mainScreen().bounds.size.width/2 - 100, 0, 200, 30)
+        loginView.frame  = CGRectMake(UIScreen.mainScreen().bounds.size.width/2 - 100, 0, 200, 40)
         loginView.readPermissions = ["public_profile", "email", "user_friends"]
         loginView.delegate = self
         viewFB.addSubview(loginView)
+        
+        
+        //=========Google access info
+        GIDSignIn.sharedInstance().signOut()
+        let singin = GIDSignIn.sharedInstance()
+        singin.delegate = self
+        singin.uiDelegate = self
+        
+    }
+    // MARK: - Goolge Delegate Method
+    
+    func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!, withError error: NSError!) {
+        if (error == nil) {
+            print(user.profile.name)
+        
+
+//            let ImageURL = user.profile.imageURLWithDimension(200)
+//            let data = NSData(contentsOfURL: ImageURL!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+//            imageView.image = UIImage(data: data!)
+            
+        } else {
+            print("\(error.localizedDescription)")
+        }
     }
     
-    // Facebook Delegate Methods
+    // MARK: - Facebook Delegate Methods
     func loginButton(loginButton: FBSDKLoginButton!, didCompleteWithResult result: FBSDKLoginManagerLoginResult!, error: NSError!) {
         if ((error) != nil){
             // Process error

@@ -326,7 +326,7 @@ BOOL SolarToLunar(int Year, int Month, int Day, lunar_t& lunar){
     }
     
     int ly, lm, ld;
-    int m1, m2, mm, i, j, w;
+    int m1 = 0, m2 = 0, mm = 0, i, j, w;
     int sy = Year, sm = Month, sd = Day;
     long td, td1, td2;
     int dt[203], k1, k2;
@@ -471,7 +471,7 @@ BOOL LunarToSolar(int Year, int Month, int Day, BOOL Leaf, solar_t& solar){
     
     int lyear, lmonth, lday, leapyes;
     int syear, smonth, sday;
-    int mm, y1, y2, m1;
+    int mm = 0, y1, y2, m1;
     int i, j, k1, k2, leap, w;
     long td, y;
     lyear = Year;
@@ -581,7 +581,7 @@ BOOL LunarToSolar(int Year, int Month, int Day, BOOL Leaf, solar_t& solar){
     y1 = 1840;
     do {
         y1++;
-        leap = (y1 % 400 == 0) || (y1 % 100 != 0) && (y1 % 4 ==0);
+        leap = (y1 % 400 == 0) || ((y1 % 100 != 0) && (y1 % 4 ==0));
         if(leap)
             y2 = 366;
         else
