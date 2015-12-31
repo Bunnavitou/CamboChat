@@ -48,6 +48,36 @@ class AddNewChatViewController: YomanViewController,UITableViewDataSource,UITabl
 //        SendTrat("CAMCHAT_LSTFRNDCRM")
         
         dicData = SingleTonManager.ShareSingleTonManager().dicUserFriend
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        animateTable()
+    }
+    
+    func animateTable() {
+        mainTableView.reloadData()
+        
+        let cells = mainTableView.visibleCells
+        let tableHeight: CGFloat = mainTableView.bounds.size.height
+        
+        for i in cells {
+            let cell: UITableViewCell = i as UITableViewCell
+            cell.transform = CGAffineTransformMakeTranslation(0, tableHeight)
+        }
+        
+        var index = 0
+        
+        for a in cells {
+            let cell: UITableViewCell = a as UITableViewCell
+            UIView.animateWithDuration(1.5, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: UIViewAnimationOptions.AllowAnimatedContent, animations: {
+                cell.transform = CGAffineTransformMakeTranslation(0, 0);
+                }, completion: nil)
+           
+            index += 1
+        }
     }
     
     // MARK: - Server Action Area
@@ -96,11 +126,11 @@ class AddNewChatViewController: YomanViewController,UITableViewDataSource,UITabl
             userTitleLabel = view.viewWithTag(25000 + dataIncreaseInt) as! UILabel!
             userDelImageV = view.viewWithTag(30000 + dataIncreaseInt) as! UIImageView
 
-            
             sectionTitleBt.removeFromSuperview()
             userTitleLabel.removeFromSuperview()
             userDelImageV.removeFromSuperview()
             userSelectImageV.removeFromSuperview()
+            
             
             dataIncreaseInt++
         }
